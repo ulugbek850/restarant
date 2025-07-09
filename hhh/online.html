@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Restoran Buyurtmalari</title>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fefefe;
+      margin: 0; padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #d32f2f;
+      margin-bottom: 40px;
+      text-shadow: 1px 1px 2px #aaa;
+    }
+    .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .block {
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 15px;
+      padding: 20px;
+      width: 320px;
+      box-sizing: border-box;
+      transition: transform 0.3s ease;
+    }
+    .block:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+    }
+    .block img {
+      width: 100%;
+      height: 180px;
+      border-radius: 12px;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+    .block h2 {
+      color: #d32f2f;
+      margin-bottom: 10px;
+      font-size: 22px;
+      border-bottom: 2px solid #d32f2f;
+      padding-bottom: 5px;
+    }
+    .block p {
+      margin: 5px 0;
+      font-weight: 600;
+      color: #444;
+    }
+    form {
+      margin-top: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    input[type="text"], select {
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    button {
+      padding: 12px;
+      background-color: #d32f2f;
+      color: white;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #a52828;
+    }
+    @media(max-width: 1000px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .block {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>RESTARANIMIZGA HUSH KELIBSIZ</h1>
+  
+  <div class="container">
+
+    <div class="block">
+      <img src="https://images.pexels.com/photos/2725744/pexels-photo-2725744.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Fast Food" />
+      <h2>Fast Food</h2>
+      <p>Lavash - 30,000 so'm</p>
+      <p>Gamburger - 35,000 so'm</p>
+      <p>Donar - 25,000 so'm</p>
+      <p>Pitsa - 80,000 so'm</p>
+      <form onsubmit="sendOrder(event, 'Fast Food')">
+        <input type="text" placeholder="Ismingiz" required />
+        <input type="text" placeholder="Telefon raqamingiz" required />
+        <select name="product" required>
+          <option value="">Mahsulotni tanlang</option>
+          <option value="Lavash - 30,000 so'm">Lavash - 30,000 so'm</option>
+          <option value="Gamburger - 35,000 so'm">Gamburger - 35,000 so'm</option>
+          <option value="Donar - 25,000 so'm">Donar - 25,000 so'm</option>
+          <option value="Pitsa - 80,000 so'm">Pitsa - 80,000 so'm</option>
+        </select>
+        <button type="submit">Buyurtma berish</button>
+      </form>
+    </div>
+
+    <div class="block">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNBytRgoERy5ARMocHHmUx85kwaJroHsJrpw&s" alt="Milliy taomlar" />
+      <h2>Milliy taomlar</h2>
+      <p>Osh - 35,000 so'm</p>
+      <p>Mastava - 25,000 so'm</p>
+      <p>Salatlar - 10,000 - 20,000 so'm</p>
+      <p>Shashlik - 12,000 so'm</p>
+      <form onsubmit="sendOrder(event, 'Milliy taomlar')">
+        <input type="text" placeholder="Ismingiz" required />
+        <input type="text" placeholder="Telefon raqamingiz" required />
+        <select name="product" required>
+          <option value="">Mahsulotni tanlang</option>
+          <option value="Osh - 35,000 so'm">Osh - 35,000 so'm</option>
+          <option value="Mastava - 25,000 so'm">Mastava - 25,000 so'm</option>
+          <option value="Salatlar - 10,000 - 20,000 so'm">Salatlar - 10,000 - 20,000 so'm</option>
+          <option value="Shashlik - 12,000 so'm">Shashlik - 12,000 so'm</option>
+        </select>
+        <button type="submit">Buyurtma berish</button>
+      </form>
+    </div>
+
+    <div class="block">
+      <img src="https://daryo.uz/cache/2021/05/1-217-666x444.jpg" alt="Shirinliklar" />
+      <h2>Shirinliklar</h2>
+      <p>Qulupnaylik tort - 350,000 so'm</p>
+      <p>Barcha mevalar qo‘shilgan nabor - 450,000 so'm</p>
+      <p>Muzqaymoq - 15,000 so'm</p>
+      <p>Sharik shaklidagi muzqaymoq - 10,000 so'm</p>
+      <form onsubmit="sendOrder(event, 'Shirinliklar')">
+        <input type="text" placeholder="Ismingiz" required />
+        <input type="text" placeholder="Telefon raqamingiz" required />
+        <select name="product" required>
+          <option value="">Mahsulotni tanlang</option>
+          <option value="Qulupnaylik tort - 350,000 so'm">Qulupnaylik tort - 350,000 so'm</option>
+          <option value="Barcha mevalar qo‘shilgan nabor - 450,000 so'm">Barcha mevalar qo‘shilgan nabor - 450,000 so'm</option>
+          <option value="Muzqaymoq - 15,000 so'm">Muzqaymoq - 15,000 so'm</option>
+          <option value="Sharik shaklidagi muzqaymoq - 10,000 so'm">Sharik shaklidagi muzqaymoq - 10,000 so'm</option>
+        </select>
+        <button type="submit">Buyurtma berish</button>
+      </form>
+    </div>
+
+  </div>
+
+  <script>
+    const botToken = '7969057541:AAGmGEqGcSbI4sJ8ZbAPk8iEKwBY-uUQAOg';
+    const chatId = '1019918455';
+
+    function sendOrder(event, category) {
+      event.preventDefault();
+
+      const form = event.target;
+      const name = form.querySelector('input[placeholder="Ismingiz"]').value.trim();
+      const phone = form.querySelector('input[placeholder="Telefon raqamingiz"]').value.trim();
+      const product = form.querySelector('select[name="product"]').value;
+
+      if (!name || !phone || !product) {
+        alert('Iltimos, barcha maydonlarni to‘ldiring va mahsulotni tanlang!');
+        return;
+      }
+
+      const message = `
+✅ Yangi buyurtma!
+Kategoriya: ${category}
+Mahsulot: ${product}
+👤 Ism: ${name}
+📞 Telefon: ${phone}
+      `;
+
+      fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: message,
+          parse_mode: 'HTML'
+        })
+      })
+      .then(response => response.json())
+      .then(data => {
+        if(data.ok) {
+          alert('✅ Buyurtma muvaffaqiyatli yuborildi!');
+          form.reset();
+        } else {
+          alert('❌ Xatolik yuz berdi: ' + data.description);
+        }
+      })
+      .catch(err => {
+        alert('❌ So‘rovda xatolik yuz berdi: ' + err);
+      });
+    }
+  </script>
+
+</body>
+</html>
